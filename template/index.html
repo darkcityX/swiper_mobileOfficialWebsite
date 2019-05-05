@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.0/css/swiper.css">
+    <link rel="stylesheet" href="./../css/base.css">
+    <link rel="stylesheet" href="./../css/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.0/js/swiper.js"></script>
+    <script src="./../third/jquery/jquery.min.js"></script>
+</head>
+<body>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <p>1</p>
+            </div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+
+
+    <script>
+        let mySwiper = new Swiper('.swiper-container',{
+            direction : 'vertical',
+            // direction: 'vertical',
+            // autoplay: false,
+            // freeMode: true, 
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
+    </script>
+    
+</body>
+</html>
