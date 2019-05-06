@@ -2,40 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    
+    <title>swiper页面布局演示</title>
     <!-- swiper -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.0/css/swiper.css">
     <link rel="stylesheet" href="./../css/base.css">
     <link rel="stylesheet" href="./../css/index.css">
+    <script src="./../js/flexible.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.0/js/swiper.js"></script>
     <script src="./../third/jquery/jquery.min.js"></script>
 </head>
 <body>
 
     <div class="swiper-container">
+        <ul class="menu">
+            <li><a href="#">111</a></li>
+            <li><a href="#">222</a></li>
+            <li><a href="#">333</a></li>
+        </ul>
         <div class="swiper-wrapper">
+            <!-- 一、首屏 -->
             <div class="swiper-slide">
-                <p>1</p>
+                <div class="header-top">
+                    Swiper官网示例demo
+                </div>
             </div>
-            <div class="swiper-slide"></div>
-            <div class="swiper-slide"></div>
+            <!-- 二、二屏 -->
+            <div class="swiper-slide">2</div>
+            <!-- 三、三屏 -->
+            <div class="swiper-slide">
+                <a href="#">
+                    <img src="./../images/3.png" alt="">
+                </a>
+            </div>
         </div>
         <div class="swiper-pagination"></div>
     </div>
 
 
 
-    <script>
+    <script language="javascript">
+        // 页面布局swiper
         let mySwiper = new Swiper('.swiper-container',{
             direction : 'vertical',
-            // direction: 'vertical',
-            // autoplay: false,
-            // freeMode: true, 
             pagination: {
-                el: '.swiper-pagination',
+                el: '.swiper-pagination'
             },
         });
     </script>
