@@ -7,51 +7,103 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>swiper页面布局演示</title>
     <!-- swiper -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.0/css/swiper.css">
+    <link rel="stylesheet" href="./../third/swiper4/swiper.css">
     <link rel="stylesheet" href="./../css/base.css">
     <link rel="stylesheet" href="./../css/index.css">
-    <script src="./../js/flexible.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.0/js/swiper.js"></script>
+    <script src="./../third/flexible/flexible.js"></script>
+    <script src="./../third/swiper4/swiper.js"></script>
     <script src="./../third/jquery/jquery.min.js"></script>
 </head>
 <body>
 
-    <div class="swiper-container">
-        <ul class="menu">
-            <li><a href="#">111</a></li>
-            <li><a href="#">222</a></li>
-            <li><a href="#">333</a></li>
-        </ul>
-        <div class="swiper-wrapper">
-            <!-- 一、首屏 -->
-            <div class="swiper-slide">
-                <div class="header-top">
-                    Swiper官网示例demo
-                </div>
+    <div class="item-container swiper-container">
+        <div class='header'>
+            <div class="header-top">
+                Swiper官网示例demo
             </div>
+            <ul id="menu" class="menu">
+                <li class='active'><a href="#">首页</a></li>
+                <li><a href="#">WIFI方案</a></li>
+                <li><a href="#">产品中心</a></li>
+            </ul>
+        </div>
+        
+        <div class="pagesContainer swiper-wrapper">
+            <!-- 一、首屏 -->
+            <div id="page1" class="page page1 swiper-slide"></div>
             <!-- 二、二屏 -->
-            <div class="swiper-slide">2</div>
+            <div class="page page2 swiper-slide">
+                <div class="banner-container swiper-container">
+                    <div class="banner-wrapper swiper-wrapper">
+                        <div class="banner-view banner-view1 swiper-slide">
+                            <div class='bannerPage news'>
+                                <h2>智能WiFi</h2>
+                                <div class='newsItem newsItem1'>
+                                    <p class='title'>广告宣传</p>
+                                    <p class='info'>
+                                        广告宣传Swiper免费WiFi不是普通路由器，是集成商家宣传与一体的智能路由器。Swiper免费WiFi是真正移动网宣传的入口，让移动互联网给你与众不同的体验。
+                                    </p>
+                                </div>
+                                <div class='newsItem newsItem2'>
+                                    <p class='title'>第四代智能路由器</p>
+                                    <p class='info'>
+                                        Swiper免费WiFi是第四代超智能路由器，500M的传输速率，超强的带机量，具有无与伦比的穿墙能力，360度无死角网络覆盖。这都是普通路由器无法比拟的。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="banner-view banner-view2 swiper-slide">
+                            <div class='bannerPage'>
+                                <h2>我们是谁？</h2>
+                                <div class='myConpany'>
+                                    <p class='title'>xxxx有限公司</p>
+                                    <p class='info'>高品质商用免费 WiFi 网络的运营商、 免费 WiFi 广告联播的整合营销机构、智能 WiFi+ 微信营销的服务提供商。通过自主研发的【智能 WiFi 平台】 与【微信营销平台】及商用智能 WiFi 网络设备，专业为大型/中型/小型热点场所(SHOPPING MALL、口岸、机场、酒店餐厅、咖啡厅、休闲会所、美发厅、4S 店等），提供商用智能免费 WiFi 网络服务及智能 WiFi + 微信营销服务。</p>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
             <!-- 三、三屏 -->
-            <div class="swiper-slide">
+            <div id="page3" class="page page3 swiper-slide">
                 <a href="#">
                     <img src="./../images/3.png" alt="">
                 </a>
             </div>
+            <!-- 四、四屏 -->
+            <div class="page page4 swiper-slide">
+                    <a href="#">
+                        <img src="./../images/4.png" alt="">
+                    </a>
+                </div>
+            <!-- 五、五屏 -->
+            <div class="page page5 swiper-slide">
+                    <a href="#">
+                        <img src="./../images/5.png" alt="">
+                    </a>
+                </div>
+            <!-- 六、六屏 -->
+            <div class="page page6 swiper-slide">
+                    <a href="#">
+                        <img src="./../images/6.png" alt="">
+                    </a>
+                </div>
+            <!-- 七、七屏 -->
+            <div id="page7" class="page page7 swiper-slide">
+            </div> 
+            <!-- 八、八屏 -->
+            <div class="page page8 swiper-slide">
+            </div>
+            <!-- 九、九屏 -->
+            <div class="page page9 swiper-slide">
+            </div>  
+            <!-- 九、九屏 -->
+            <div class="page page10 swiper-slide">
+            </div>             
         </div>
         <div class="swiper-pagination"></div>
     </div>
 
-
-
-    <script language="javascript">
-        // 页面布局swiper
-        let mySwiper = new Swiper('.swiper-container',{
-            direction : 'vertical',
-            pagination: {
-                el: '.swiper-pagination'
-            },
-        });
-    </script>
-    
+    <script src='./../js/index.js'></script>
 </body>
 </html>
