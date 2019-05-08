@@ -71,7 +71,9 @@
   background: #f3f3f3;
 }
 .item-container .pagesContainer .page2 .banner-container {
-  height: 100vh;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
 }
 .item-container .pagesContainer .page2 .banner-container .banner-view {
   position: relative;

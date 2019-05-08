@@ -8,17 +8,19 @@
     <title>swiper页面布局演示</title>
     <!-- swiper -->
     <link rel="stylesheet" href="./../third/swiper4/swiper.css">
+    <link rel="stylesheet" href="./../third/swiper_animate/animate.min.css">
     <link rel="stylesheet" href="./../css/base.css">
     <link rel="stylesheet" href="./../css/index.css">
     <script src="./../third/flexible/flexible.js"></script>
     <script src="./../third/swiper4/swiper.js"></script>
+    <script src="./../third/swiper_animate/swiper.animate.min.js"></script>
     <script src="./../third/jquery/jquery.min.js"></script>
 </head>
 <body>
 
     <div class="item-container swiper-container">
         <div class='header'>
-            <div class="header-top">
+            <div id='header-top' class="header-top">
                 Swiper官网示例demo
             </div>
             <ul id="menu" class="menu">
@@ -72,22 +74,40 @@
             </div>
             <!-- 四、四屏 -->
             <div class="page page4 swiper-slide">
-                    <a href="#">
-                        <img src="./../images/4.png" alt="">
-                    </a>
-                </div>
+                <a href="#">
+                    <img 
+                        class='ani' 
+                        swiper-animate-effect="rotateIn" 
+                        swiper-animate-duration="0.5s" 
+                        swiper-animate-delay="0.3s"
+                        src="./../images/4.png" 
+                        alt="">
+                </a>
+            </div>
             <!-- 五、五屏 -->
             <div class="page page5 swiper-slide">
-                    <a href="#">
-                        <img src="./../images/5.png" alt="">
-                    </a>
-                </div>
+                <a href="#">
+                    <img 
+                        class='ani' 
+                        swiper-animate-effect="rollIn" 
+                        swiper-animate-duration="0.5s" 
+                        swiper-animate-delay="0.3s"
+                        src="./../images/5.png" 
+                        alt="">
+                </a>
+            </div>
             <!-- 六、六屏 -->
             <div class="page page6 swiper-slide">
-                    <a href="#">
-                        <img src="./../images/6.png" alt="">
-                    </a>
-                </div>
+                <a href="#">
+                    <img 
+                        class='ani' 
+                        swiper-animate-effect="zoomIn" 
+                        swiper-animate-duration="0.5s" 
+                        swiper-animate-delay="0.3s"    
+                        src="./../images/6.png" 
+                        alt="">
+                </a>
+            </div>
             <!-- 七、七屏 -->
             <div id="page7" class="page page7 swiper-slide">
             </div> 

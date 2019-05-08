@@ -15,9 +15,12 @@ function INDEX() {
                 el: '.swiper-pagination'
             },
             on: {
+                init: function(){
+                    swiperAnimateCache(this); //隐藏动画元素 
+                    swiperAnimate(this); //初始化完成开始动画
+                },
                 slideChangeTransitionStart: function(){
                     let i = this.activeIndex;   // 索引下标
-                    console.log( i );
                     let b;                      // 第三方变量值
                     switch (i){
                         case 0:
@@ -39,24 +42,15 @@ function INDEX() {
                         default:
                             break;
                     }
-                    // console.log( b == 1 );
+                    
                     i == 1 && $('#menu').prev().animate({
-                        'opactiy': '0'
-                    },200).next().animate({
-                        'top': '-4.2rem',
-                        'opacity': '1'
-                    },1000).css({'background':'rgba(255,255,255,1)'});
+                        opacity: 0
+                    },1000).next().animate({
+                       'top': '-4.2rem',
+                       'opacity': '1'
+                    },1000);
 
                     // 导航定位active
-                    // b == 1 && function(){
-                    //     $("#menu").children("li").removeClass('active').eq(0).addClass('active');
-                    // }();
-                    // b == 2 && function(){
-                    //     $("#menu").children("li").removeClass('active').eq(1).addClass('active');
-                    // }();
-                    // b == 3 && function(){
-                    //     $("#menu").children("li").removeClass('active').eq(2).addClass('active');
-                    // }();
                     switch (b){
                         case 1:
                             $("#menu").children("li").removeClass('active').eq(0).addClass('active');
@@ -68,30 +62,71 @@ function INDEX() {
                             $("#menu").children("li").removeClass('active').eq(2).addClass('active');
                             break;
                     }
-                    
-                    
                 },
                 slideChangeTransitionEnd: function(){
-                    let i = this.activeIndex;   // 索引下标
-                    console.log("触发 end");
-                    0 == i && $('#menu').css({'background':'rgba(255,255,255,0.8)'}).animate({
-                        'top': '0',
-                        'opacity': '0.8'
+                    swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+                    let i = this.activeIndex;   // 索引下标  
+                    0 == i && $('#menu').animate({
+                        top: 0,
+                        opacity: 0.8
                     },1000).prev().animate({
-                        'opactiy': '1'
-                    },200);
-                    //.css({'top':'0','background':'rgba(255,255,255,0.8)'});
+                        opacity: 1
+                    },1000);
                 },
             },
         });
+
+        // 菜单导航单击跳转
+        $("#menu").children("li").each(function(i){
+            $(this).on('click',function(e){
+                e.preventDefault();
+                switch (i){
+                    case 0:
+                        $('#menu').animate({
+                            top: 0,
+                            opacity: 0.8
+                        },1000).prev().animate({
+                            opacity: 1
+                        },1000);
+                        $(this).addClass('active').siblings().removeClass('active');
+                        mySwiper.slideTo(0, 1000, false);
+                        break;
+                    case 1:
+                        $('#menu').prev().animate({
+                            opacity: 0
+                        },1000).next().animate({
+                        'top': '-4.2rem',
+                        'opacity': '1'
+                        },1000);
+                        $(this).addClass('active').siblings().removeClass('active');
+                        mySwiper.slideTo(2, 1000, false);
+                        break;
+                    case 2:
+                        $('#menu').prev().animate({
+                            opacity: 0
+                        },1000).next().animate({
+                        'top': '-4.2rem',
+                        'opacity': '1'
+                        },1000);
+                        $(this).addClass('active').siblings().removeClass('active');
+                        mySwiper.slideTo(6, 1000, false);
+                        break;
+                    default:
+                        break;
+                }
+            });
+        });
+
     }
 
     function initEvent(){
+
         // swiper页面2 banner控制器
         let myBanner = new Swiper('.banner-container',{
             loop : true,
+            effect : 'cube',
             pagination: {
-                
+
             },
         });
     }
