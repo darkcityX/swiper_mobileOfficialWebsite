@@ -16,7 +16,7 @@ swiper满屏滑动页面
     /*  */
 ```
     方式2：
-        使用js文件进行样式单位统一
+        使用js文件进行样式单位统一     【采用】  1.6rem = 16px    750
 ```javascript
 /** 字号调整 */ 
 !function (window) {
